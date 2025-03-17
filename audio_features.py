@@ -59,9 +59,11 @@ def extract_audio_features(audio_path):
     return features
 
 # Process audio files
-files = []
-for year in range(2013, 2024):
-    files.extend(glob(f'audio/{year}/*.mp3', recursive=True))
+#files = []
+#for year in range(2013, 2024):
+#    files.extend(glob(f'audio/{year}/*.mp3', recursive=True))
+
+files = glob('audio/**/*.mp3', recursive=True)
 
 for f in files:
     output_path = os.path.splitext(f)[0] + '.json'
